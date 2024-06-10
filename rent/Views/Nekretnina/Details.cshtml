@@ -1,0 +1,109 @@
+﻿@model rent.Models.Nekretnina
+
+@{
+    ViewData["Title"] = "Detalji o nekretnini";
+}
+
+
+<h1 class="animate-fadeInDown">@Model.Naziv</h1>
+<img src="@Model.ImagePath" alt="@Model.Naziv" class="img-fluid animate-fadeIn" />
+<p class="animate-fadeIn">@Model.Opis</p>
+<p class="animate-fadeIn">Ocjena: @Model.Ocjena</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <ul class="list-group animate-fadeInLeft">
+            <li class="list-group-item"><strong>Tip:</strong> @Model.Tip</li>
+            <li class="list-group-item"><strong>Površina:</strong> @Model.Povrsina m²</li>
+            <li class="list-group-item"><strong>Broj soba:</strong> @Model.BrojSoba</li>
+            <li class="list-group-item"><strong>Parking:</strong> @(Model.Parking ? "Da" : "Ne")</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form asp-action="Reserve" method="post" class="animate-fadeInRight">
+            <div class="form-group">
+                <label for="Pocetak">Početak</label>
+                <input type="date" class="form-control" id="Pocetak" name="Pocetak" required />
+            </div>
+            <div class="form-group">
+                <label for="Kraj">Kraj</label>
+                <input type="date" class="form-control" id="Kraj" name="Kraj" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-3">Rezerviši</button> <!-- Dodajemo klasu btn-lg za veće dugme i mt-3 za gornju marginu -->
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var successMessage = '@TempData["SuccessMessage"]';
+            if (successMessage) {
+                alert(successMessage);
+            }
+        });
+    </script>
+}
+
+<style>
+    /* Animacije */
+   
+
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .animate-fadeInDown {
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .animate-fadeInLeft {
+        animation: fadeInLeft 1s ease-in-out;
+    }
+
+    .animate-fadeInRight {
+        animation: fadeInRight 1s ease-in-out;
+    }
+
+    /* Stilizacija */
+    body {
+        background: linear-gradient(to right, #ece9e6, #ffffff); /* Gradijent pozadina */
+        padding: 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.8); /* Svijetla pozadina kartice s malo prozirnosti */
+        border-radius: 10px; /* Zaobljeni uglovi kartice */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blagi sjenovni efekat */
+        transition: transform 0.3s, box-shadow 0.3s; /* Dodajemo efekat prelaza za transformaciju i sjenu */
+    }
+
+    .card:hover {
+        transform: scale(1.05); /* Povećavamo karticu za 5% kada se pređe mišem preko nje */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Dodajemo lagani efekat sjene */
+    }
+
+    .list-group-item {
+        transition: transform 0.3s, background 0.3s; /* Dodajemo efekat prelaza za transformaciju i pozadinu */
+    }
+
+    .list-group-item:hover {
+        transform: scale(1.05); /* Povećavamo stavku za 5% kada se pređe mišem preko nje */
+        background: rgba(0, 123, 255, 0.1); /* Lagano plava pozadina na hover */
+    }
+
+    .form-group label {
+        font-weight: bold; /* Podebljana slova za labele */
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(45deg, #007bff, #0056b3); /* Gradijent na dugmetu */
+        border: none;
+        color: white;
+        transition: background 0.3s; /* Dodajemo efekat prelaza za pozadinu */
+    }
+
+    button[type="submit"]:hover {
+        background: linear-gradient(45deg, #0056b3, #007bff); /* Obrnuti gradijent na hover */
+    }
+</style>

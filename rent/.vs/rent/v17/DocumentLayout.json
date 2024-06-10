@@ -1,0 +1,681 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\belmin\\source\\repos\\rent\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\vozilo\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\vozilo\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\nekretnina\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\nekretnina\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\nekretnina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\nekretnina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\nekretninacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\nekretninacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\vozilocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\vozilocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\rezervacijacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\rezervacijacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\rezervacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\rezervacija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\vozilo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\vozilo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\korisnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\korisnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\recenzijacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\recenzijacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\profilkorisnikacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\profilkorisnikacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\korisnikcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\korisnikcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\recenzija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\recenzija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\profilkorisnika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\profilkorisnika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\models\\resurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:models\\resurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\controllers\\resurscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:controllers\\resurscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\vozilo\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\vozilo\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\vozilo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\vozilo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\nekretnina\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\nekretnina\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\nekretnina\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\nekretnina\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\rent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:rent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\properties\\servicedependencies.local.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:properties\\servicedependencies.local.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\20240531232929_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\20240531232929_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\20240601152038_migracija5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\20240601152038_migracija5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\20240601150759_migracija4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\20240601150759_migracija4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\20240601113505_migracija3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\20240601113505_migracija3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|c:\\users\\belmin\\source\\repos\\rent\\data\\migrations\\20240601112333_migracija2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDFC3A07-DAB2-4B70-AB2B-5CDD8C4A4F70}|rent.csproj|solutionrelative:data\\migrations\\20240601112333_migracija2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozilo\\Details.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Details.cshtml",
+              "RelativeToolTip": "Views\\Vozilo\\Details.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T16:27:26.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Nekretnina\\Details.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Details.cshtml",
+              "RelativeToolTip": "Views\\Nekretnina\\Details.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAQwG0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T16:26:41.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NekretninaController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\NekretninaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NekretninaController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\NekretninaController.cs",
+              "RelativeToolTip": "Controllers\\NekretninaController.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAwDUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T11:36:38.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Nekretnina.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Nekretnina.cs",
+              "RelativeDocumentMoniker": "Models\\Nekretnina.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Nekretnina.cs",
+              "RelativeToolTip": "Models\\Nekretnina.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAcwAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:05:16.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T23:43:31.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T23:44:29.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-01T00:40:30.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VoziloController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\VoziloController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VoziloController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\VoziloController.cs",
+              "RelativeToolTip": "Controllers\\VoziloController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAwEUAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T11:25:04.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RezervacijaController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\RezervacijaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RezervacijaController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\RezervacijaController.cs",
+              "RelativeToolTip": "Controllers\\RezervacijaController.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:19:13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Rezervacija.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Rezervacija.cs",
+              "RelativeDocumentMoniker": "Models\\Rezervacija.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Rezervacija.cs",
+              "RelativeToolTip": "Models\\Rezervacija.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA2wB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:04:41.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Vozilo.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Vozilo.cs",
+              "RelativeDocumentMoniker": "Models\\Vozilo.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Vozilo.cs",
+              "RelativeToolTip": "Models\\Vozilo.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:05:03.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAlwBcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T00:50:20.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAA2wAkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T00:32:16.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Korisnik.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Korisnik.cs",
+              "RelativeDocumentMoniker": "Models\\Korisnik.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Korisnik.cs",
+              "RelativeToolTip": "Models\\Korisnik.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:04:09.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RecenzijaController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\RecenzijaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecenzijaController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\RecenzijaController.cs",
+              "RelativeToolTip": "Controllers\\RecenzijaController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:20:11.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProfilKorisnikaController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\ProfilKorisnikaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfilKorisnikaController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\ProfilKorisnikaController.cs",
+              "RelativeToolTip": "Controllers\\ProfilKorisnikaController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:18:17.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KorisnikController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\KorisnikController.cs",
+              "RelativeDocumentMoniker": "Controllers\\KorisnikController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\KorisnikController.cs",
+              "RelativeToolTip": "Controllers\\KorisnikController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:17:47.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T01:21:09.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Recenzija.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Recenzija.cs",
+              "RelativeDocumentMoniker": "Models\\Recenzija.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Recenzija.cs",
+              "RelativeToolTip": "Models\\Recenzija.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:04:53.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProfilKorisnika.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\ProfilKorisnika.cs",
+              "RelativeDocumentMoniker": "Models\\ProfilKorisnika.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\ProfilKorisnika.cs",
+              "RelativeToolTip": "Models\\ProfilKorisnika.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:04:21.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Resurs.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Resurs.cs",
+              "RelativeDocumentMoniker": "Models\\Resurs.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Models\\Resurs.cs",
+              "RelativeToolTip": "Models\\Resurs.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:04:30.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "20240601152038_migracija5.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601152038_migracija5.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240601152038_migracija5.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601152038_migracija5.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240601152038_migracija5.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:20:39.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ResursController.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\ResursController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ResursController.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Controllers\\ResursController.cs",
+              "RelativeToolTip": "Controllers\\ResursController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:18:43.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20240601150759_migracija4.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601150759_migracija4.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240601150759_migracija4.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601150759_migracija4.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240601150759_migracija4.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T15:07:59.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozilo\\Create.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Create.cshtml",
+              "RelativeToolTip": "Views\\Vozilo\\Create.cshtml",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAmwCwAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T11:26:37.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozilo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Vozilo\\Index.cshtml",
+              "RelativeToolTip": "Views\\Vozilo\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T12:44:51.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Nekretnina\\Index.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Index.cshtml",
+              "RelativeToolTip": "Views\\Nekretnina\\Index.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEsAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T13:16:53.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Nekretnina\\Create.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Nekretnina\\Create.cshtml",
+              "RelativeToolTip": "Views\\Nekretnina\\Create.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAACMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T11:57:26.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T00:30:38.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20240601113505_migracija3.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601113505_migracija3.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240601113505_migracija3.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601113505_migracija3.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240601113505_migracija3.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T11:35:05.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20240601112333_migracija2.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601112333_migracija2.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240601112333_migracija2.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240601112333_migracija2.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240601112333_migracija2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T11:23:34.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "rent.csproj",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\rent.csproj",
+              "RelativeDocumentMoniker": "rent.csproj",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\rent.csproj",
+              "RelativeToolTip": "rent.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-01T00:59:26.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "serviceDependencies.local.json",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Properties\\serviceDependencies.local.json",
+              "RelativeDocumentMoniker": "Properties\\serviceDependencies.local.json",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Properties\\serviceDependencies.local.json",
+              "RelativeToolTip": "Properties\\serviceDependencies.local.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-01T00:59:20.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-01T00:59:22.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwB8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:10:55.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABoAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T00:50:24.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAADsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T00:32:14.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T23:55:30.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20240531232929_migracija.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240531232929_migracija.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240531232929_migracija.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\20240531232929_migracija.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240531232929_migracija.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:29:29.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:25:57.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\belmin\\source\\repos\\rent\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\belmin\\source\\repos\\rent\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAACQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-31T23:14:20.411Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+﻿@model rent.Models.Vozilo
+
+@{
+    ViewData["Title"] = "Detalji o vozilu";
+}
+
+<h1 class="animate-fadeInDown">@Model.Marka @Model.Model</h1>
+<img src="@Model.ImagePath" alt="@Model.Marka @Model.Model" class="img-fluid animate-fadeIn" />
+<p class="animate-fadeIn">@Model.Opis</p>
+<p class="animate-fadeIn">Ocjena: @Model.Ocjena</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <ul class="list-group animate-fadeInLeft">
+            <li class="list-group-item"><strong>Tip:</strong> @Model.Tip</li>
+            <li class="list-group-item"><strong>Marka:</strong> @Model.Marka</li>
+            <li class="list-group-item"><strong>Model:</strong> @Model.Model</li>
+            <li class="list-group-item"><strong>Godište:</strong> @Model.Godiste</li>
+            <li class="list-group-item"><strong>Broj sjedista:</strong> @Model.BrojSjedista</li>
+            <li class="list-group-item"><strong>Tip goriva:</strong> @Model.TipGoriva</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <form asp-action="Reserve" method="post" class="animate-fadeInRight">
+            <div class="form-group">
+                <label for="Pocetak">Početak</label>
+                <input type="date" class="form-control" id="Pocetak" name="Pocetak" required />
+            </div>
+            <div class="form-group">
+                <label for="Kraj">Kraj</label>
+                <input type="date" class="form-control" id="Kraj" name="Kraj" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-3">Rezerviši</button> 
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var successMessage = '@TempData["SuccessMessage"]';
+            if (successMessage) {
+                alert(successMessage);
+            }
+        });
+    </script>
+}
+
+<style>
+    /* Animacije */
+
+
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .animate-fadeInDown {
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .animate-fadeInLeft {
+        animation: fadeInLeft 1s ease-in-out;
+    }
+
+    .animate-fadeInRight {
+        animation: fadeInRight 1s ease-in-out;
+    }
+
+    /* Stilizacija */
+    body {
+        background: linear-gradient(to right, #ece9e6, #ffffff); 
+        padding: 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.8); 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        transition: transform 0.3s, box-shadow 0.3s; 
+    }
+
+        .card:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+
+    .list-group-item {
+        transition: transform 0.3s, background 0.3s; 
+    }
+
+        .list-group-item:hover {
+            transform: scale(1.05); 
+            background: rgba(0, 123, 255, 0.1); 
+        }
+
+    .form-group label {
+        font-weight: bold; 
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(45deg, #007bff, #0056b3); 
+        border: none;
+        color: white;
+        transition: background 0..3s; 
+    }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(45deg, #0056b3, #007bff); 
+        }
+</style>

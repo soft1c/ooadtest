@@ -1,0 +1,74 @@
+﻿@model (IEnumerable<rent.Models.Nekretnina>, IEnumerable<rent.Models.Vozilo>)
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h2>Nekretnine</h2>
+<div class="row">
+    @foreach (var nekretnina in Model.Item1)
+    {
+        <div class="col-md-3 mb-3">
+            <a asp-controller="Nekretnina" asp-action="Details" asp-route-id="@nekretnina.IdResursa" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="@nekretnina.ImagePath" class="card-img-top" alt="@nekretnina.Naziv">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@nekretnina.Naziv</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<h2>Vozila</h2>
+<div class="row">
+    @foreach (var vozilo in Model.Item2)
+    {
+        <div class="col-md-3 mb-3">
+            <a asp-controller="Vozilo" asp-action="Details" asp-route-id="@vozilo.IdResursa" class="text-decoration-none">
+                <div class="card h-100">
+                    <img src="@vozilo.ImagePath" class="card-img-top" alt="@vozilo.Marka @vozilo.Model">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@vozilo.Marka @vozilo.Model</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<style>
+    /* Stilovi za kartice */
+    .card {
+        width: 100%; /* Kartice će biti iste širine */
+        transition: transform 0.3s, box-shadow 0.3s; /* Dodajemo efekat prelaza za transformaciju i sjenu */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+        /* Stilovi za efekat hover-a */
+        .card:hover {
+            transform: scale(1.05); /* Povećavamo karticu za 5% kada se pređe mišem preko nje */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Dodajemo lagani efekat sjene */
+        }
+
+    /* Postavljanje iste visine za sve kartice */
+    .row [class^="col-"] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
