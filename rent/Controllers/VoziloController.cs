@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using rent.Data;
 using rent.Models;
@@ -26,7 +23,26 @@ namespace rent.Controllers
         // GET: Vozilo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Vozilo.ToListAsync());
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized();
+            }
+
+            Console.WriteLine($"Original UserId: {currentUserId}");
+            TempData["OriginalUserId"] = currentUserId;
+
+            long userIdHash = HashHelper.GetLongHash(currentUserId);
+
+            // Loguj i prikaži heširani UserId
+            Console.WriteLine($"Heširani UserId: {userIdHash}");
+            TempData["UserIdHash"] = userIdHash.ToString();
+
+            var vozila = await _context.Vozilo
+                .Where(v => v.IdVlasnika == userIdHash)
+                .ToListAsync();
+
+            return View(vozila);
         }
 
         // GET: Vozilo/Details/5
@@ -51,12 +67,22 @@ namespace rent.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Reserve(long id, DateTime Pocetak, DateTime Kraj)
         {
-            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            long parsedUserId = currentUserId.GetHashCode();
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized();
+            }
+            if (Pocetak > Kraj)
+            {
+                TempData["ErrorMessage"] = "Pocetak rezervacije mora biti prije kraja rezervacije!";
+                return RedirectToAction("Details", "Vozilo", new { id = id });
+            }
+           
+            long userIdHash = HashHelper.GetLongHash(currentUserId);
 
             var rezervacija = new Rezervacija
             {
-                IdOsobe = parsedUserId,
+                IdOsobe = userIdHash,
                 IdResursa = id,
                 Pocetak = Pocetak,
                 Kraj = Kraj,
@@ -67,7 +93,7 @@ namespace rent.Controllers
             await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] = "Rezervacija je uspješno napravljena!";
-            return RedirectToAction(nameof(Details), new { id });
+            return RedirectToAction("Details", "Rezervacija", new { id = rezervacija.IdRezervacije });
         }
 
         // GET: Vozilo/Create
@@ -77,49 +103,34 @@ namespace rent.Controllers
         }
 
         // POST: Vozilo/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        // POST: Vozilo/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,Ocjena,ImagePath,IdVlasnika")] Vozilo vozilo)
+        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,Ocjena,ImagePath")] Vozilo vozilo)
         {
             if (ModelState.IsValid)
             {
-                // Ovdje dobijamo ID trenutno prijavljenog korisnika
-                var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(currentUserId))
+                {
+                    return Unauthorized();
+                }
 
-                // Generišemo jedinstveni identifikator korisnika iz GUID-a
-                long korisnikId = currentUserId.GetHashCode();
+                Console.WriteLine($"Original UserId pri kreiranju: {currentUserId}");
+                TempData["OriginalUserId"] = currentUserId;
 
-                // Postavljamo ID vlasnika na generisani ID korisnika
-                vozilo.IdVlasnika = korisnikId;
+                vozilo.IdVlasnika = HashHelper.GetLongHash(currentUserId);
 
-                // Dodajemo vozilo u bazu
+                // Loguj i prikaži heširani UserId
+                Console.WriteLine($"Heširani UserId: {vozilo.IdVlasnika}");
+                TempData["UserIdHash"] = vozilo.IdVlasnika.ToString();
+
+
                 _context.Add(vozilo);
                 await _context.SaveChangesAsync();
-
-                // Kreiramo novi resurs koristeći informacije iz vozila
-                Resurs resurs = new Resurs
-                {
-                    IdVlasnika = korisnikId,
-                    Naziv = vozilo.Naziv,
-                    Opis = vozilo.Opis,
-                    Ocjena = vozilo.Ocjena
-                    // Dodajte dodatna svojstva resursa ovdje ako je potrebno
-                };
-
-                // Dodajemo novi resurs u bazu
-                _context.Add(resurs);
-                await _context.SaveChangesAsync();
-
                 return RedirectToAction(nameof(Index));
             }
             return View(vozilo);
         }
-
-
-
 
         // GET: Vozilo/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -138,8 +149,6 @@ namespace rent.Controllers
         }
 
         // POST: Vozilo/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,ImagePath,IdResursa,IdVlasnika,Naziv,Opis,Ocjena")] Vozilo vozilo)

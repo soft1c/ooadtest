@@ -13,6 +13,7 @@ namespace rent.Models
 
         [Display(Name ="Slika")]
         public string ImagePath { get; set; } // Dodano svojstvo za putanju slike
+        
     }
 
 

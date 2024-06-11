@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -34,7 +35,7 @@ namespace rent.Controllers
             }
 
             var korisnik = await _context.Korisnik
-                .FirstOrDefaultAsync(m => m.IdKorisnika == id);
+                .FirstOrDefaultAsync(m => HashHelper.GetLongHash(m.IdKorisnika) == id);
             if (korisnik == null)
             {
                 return NotFound();
@@ -88,7 +89,7 @@ namespace rent.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("IdKorisnika,Username,Email,Password,TipKorisnika")] Korisnik korisnik)
         {
-            if (id != korisnik.IdKorisnika)
+            if (id != HashHelper.GetLongHash(korisnik.IdKorisnika))
             {
                 return NotFound();
             }
@@ -102,7 +103,7 @@ namespace rent.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!KorisnikExists(korisnik.IdKorisnika))
+                    if (!KorisnikExists(HashHelper.GetLongHash(korisnik.IdKorisnika)))
                     {
                         return NotFound();
                     }
@@ -125,7 +126,7 @@ namespace rent.Controllers
             }
 
             var korisnik = await _context.Korisnik
-                .FirstOrDefaultAsync(m => m.IdKorisnika == id);
+                .FirstOrDefaultAsync(m => HashHelper.GetLongHash(m.IdKorisnika) == id);
             if (korisnik == null)
             {
                 return NotFound();
@@ -151,7 +152,7 @@ namespace rent.Controllers
 
         private bool KorisnikExists(long id)
         {
-            return _context.Korisnik.Any(e => e.IdKorisnika == id);
+            return _context.Korisnik.Any(m=> HashHelper.GetLongHash(m.IdKorisnika) == id);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace rent.Controllers
         public IActionResult Create()
         {
             return View();
-        }
+        }   
 
         // POST: Rezervacija/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -65,6 +65,8 @@ namespace rent.Controllers
             return View(rezervacija);
         }
 
+        
+        
         // GET: Rezervacija/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {

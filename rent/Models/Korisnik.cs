@@ -5,11 +5,13 @@ namespace rent.Models
     public class Korisnik
     {
         [Key]
-        public long IdKorisnika { get; set; }
+        public string IdKorisnika { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         [EnumDataType(typeof(TipKorisnika))]   public TipKorisnika TipKorisnika { get; set; }
+
+
     }
 
     public enum TipKorisnika
