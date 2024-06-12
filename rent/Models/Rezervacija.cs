@@ -14,6 +14,8 @@ namespace rent.Models
         public DateTime Pocetak { get; set; }
         public DateTime Kraj { get; set; }
         [EnumDataType(typeof(Status))]  public Status Status { get; set; }
+
+         public virtual Resurs Resurs { get; set; }
     }
 
     public enum Status

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using rent.Data;
 using rent.Models;
+using System.Security.Claims;
 
 namespace rent.Controllers
 {
@@ -50,8 +50,6 @@ namespace rent.Controllers
         }   
 
         // POST: Rezervacija/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdRezervacije,IdOsobe,IdResursa,Pocetak,Kraj,Status")] Rezervacija rezervacija)
@@ -65,8 +63,6 @@ namespace rent.Controllers
             return View(rezervacija);
         }
 
-        
-        
         // GET: Rezervacija/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
@@ -84,8 +80,6 @@ namespace rent.Controllers
         }
 
         // POST: Rezervacija/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("IdRezervacije,IdOsobe,IdResursa,Pocetak,Kraj,Status")] Rezervacija rezervacija)
@@ -154,6 +148,52 @@ namespace rent.Controllers
         private bool RezervacijaExists(long id)
         {
             return _context.Rezervacija.Any(e => e.IdRezervacije == id);
+        }
+
+        // GET: Rezervacija/MyReservations
+        public async Task<IActionResult> MyReservations()
+        {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized();
+            }
+
+            long  userIdHash = HashHelper.GetLongHash(currentUserId);
+
+            var mojeRezervacije = await _context.Rezervacija
+                .Include(r => r.Resurs)
+                .Where(r => r.IdOsobe == userIdHash)
+                .ToListAsync();
+
+            var rezervacijeOdMene = await _context.Rezervacija
+                .Include(r => r.Resurs)
+                .Where(r => _context.Vozilo.Any(v => v.IdResursa == r.IdResursa && v.IdVlasnika == userIdHash) && r.Status == Status.UObradi)
+                .ToListAsync();
+
+            var model = new ReservationsViewModel
+            {
+                MojeRezervacije = mojeRezervacije,
+                RezervacijeOdMene = rezervacijeOdMene
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateReservationStatus(long id, bool accept)
+        {
+            var rezervacija = await _context.Rezervacija.FindAsync(id);
+            if (rezervacija == null)
+            {
+                return NotFound();
+            }
+
+            rezervacija.Status = accept ? Status.Potvrdjeno : Status.Odbijeno;
+            _context.Update(rezervacija);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(MyReservations));
         }
     }
 }

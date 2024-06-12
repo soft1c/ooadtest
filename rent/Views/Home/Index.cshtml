@@ -6,6 +6,14 @@
 
 <h1>Index</h1>
 
+<nav>
+    <ul>
+        <li><a asp-controller="Home" asp-action="Index">Početna</a></li>
+        <li><a asp-controller="Vozilo" asp-action="Index">Moja vozila</a></li>
+        <li><a asp-controller="Rezervacija" asp-action="MyReservations">Moje rezervacije</a></li>
+    </ul>
+</nav>
+
 <h2>Nekretnine</h2>
 <div class="row">
     @foreach (var nekretnina in Model.Item1)

@@ -1,0 +1,63 @@
+@model rent.Models.ReservationsViewModel
+
+@{
+    ViewData["Title"] = "Moje rezervacije";
+}
+
+<h1>Moje rezervacije</h1>
+
+<h2>Moje rezervacije</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Resurs</th>
+            <th>Početak</th>
+            <th>Kraj</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MojeRezervacije)
+        {
+            <tr>
+                <td>@item.IdResursa</td>
+                <td>@item.Pocetak.ToShortDateString()</td>
+                <td>@item.Kraj.ToShortDateString()</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Zahtjevi za rezervacije</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Resurs</th>
+            <th>Korisnik</th>
+            <th>Početak</th>
+            <th>Kraj</th>
+            <th>Status</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RezervacijeOdMene)
+        {
+            <tr>
+                <td>@item.IdResursa</td>
+                <td>@item.IdOsobe</td>
+                <td>@item.Pocetak.ToShortDateString()</td>
+                <td>@item.Kraj.ToShortDateString()</td>
+                <td>@item.Status</td>
+                <td>
+                    <form asp-action="UpdateReservationStatus" method="post">
+                        <input type="hidden" name="id" value="@item.IdRezervacije" />
+                        <button type="submit" name="accept" value="true" class="btn btn-success">Prihvati</button>
+                        <button type="submit" name="accept" value="false" class="btn btn-danger">Odbij</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
