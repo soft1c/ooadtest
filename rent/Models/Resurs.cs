@@ -12,5 +12,7 @@ namespace rent.Models
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public double Ocjena { get; set; }
+
+        public double Cijena { get; set; }
     }
 }

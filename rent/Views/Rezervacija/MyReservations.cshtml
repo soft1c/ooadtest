@@ -20,7 +20,11 @@
         @foreach (var item in Model.MojeRezervacije)
         {
             <tr>
-                <td>@item.IdResursa</td>
+                <td>
+                    <a asp-controller="Resurs" asp-action="Details" asp-route-id="@item.IdResursa">
+                        @item.Resurs.Naziv
+                    </a>
+                </td>
                 <td>@item.Pocetak.ToShortDateString()</td>
                 <td>@item.Kraj.ToShortDateString()</td>
                 <td>@item.Status</td>
@@ -45,7 +49,11 @@
         @foreach (var item in Model.RezervacijeOdMene)
         {
             <tr>
-                <td>@item.IdResursa</td>
+                <td>
+                    <a asp-controller="Resurs" asp-action="Details" asp-route-id="@item.IdResursa">
+                        @item.Resurs.Naziv
+                    </a>
+                </td>
                 <td>@item.IdOsobe</td>
                 <td>@item.Pocetak.ToShortDateString()</td>
                 <td>@item.Kraj.ToShortDateString()</td>

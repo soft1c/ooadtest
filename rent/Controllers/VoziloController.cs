@@ -105,7 +105,7 @@ namespace rent.Controllers
         // POST: Vozilo/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,Ocjena,ImagePath")] Vozilo vozilo)
+        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,Ocjena,Cijena,ImagePath")] Vozilo vozilo)
         {
             if (ModelState.IsValid)
             {
@@ -151,7 +151,7 @@ namespace rent.Controllers
         // POST: Vozilo/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,ImagePath,IdResursa,IdVlasnika,Naziv,Opis,Ocjena")] Vozilo vozilo)
+        public async Task<IActionResult> Edit(long id, [Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,ImagePath,IdResursa,IdVlasnika,Naziv,Opis,Ocjena,Cijena")] Vozilo vozilo)
         {
             if (id != vozilo.IdResursa)
             {

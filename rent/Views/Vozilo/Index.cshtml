@@ -22,6 +22,7 @@
             <th>@Html.DisplayNameFor(model => model.Naziv)</th>
             <th>@Html.DisplayNameFor(model => model.Opis)</th>
             <th>@Html.DisplayNameFor(model => model.Ocjena)</th>
+            <th>@Html.DisplayNameFor(model => model.Cijena)</th>
             <th></th>
         </tr>
     </thead>
@@ -39,6 +40,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Naziv)</td>
                 <td>@Html.DisplayFor(modelItem => item.Opis)</td>
                 <td>@Html.DisplayFor(modelItem => item.Ocjena)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cijena)</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.IdResursa">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.IdResursa">Details</a> |

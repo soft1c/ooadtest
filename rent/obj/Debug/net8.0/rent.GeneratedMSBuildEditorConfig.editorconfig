@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mac/Downloads/Grupa2-Tim5-implementacija/rent/Views/Filter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmlsdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mac/Downloads/Grupa2-Tim5-implementacija/rent/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -156,6 +160,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mac/Downloads/Grupa2-Tim5-implementacija/rent/Views/Resurs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdXJzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/Downloads/Grupa2-Tim5-implementacija/rent/Views/Resurs/Filter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdXJzL0ZpbHRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/Downloads/Grupa2-Tim5-implementacija/rent/Views/Resurs/Index.cshtml]

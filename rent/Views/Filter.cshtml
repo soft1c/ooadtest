@@ -1,0 +1,130 @@
+@model rent.Models.Filtriranje
+
+@{
+    ViewData["Title"] = "Filter Resursa";
+}
+
+<h1>Filter Resursa</h1>
+
+<form asp-action="Filter" method="post">
+    <div class="form-group">
+        <label for="TipResursa">Tip Resursa</label>
+        <select id="TipResursa" name="TipResursa" asp-for="TipResursa" class="form-control" asp-items="@(new SelectList(Model.TipoviResursa))">
+            <option value="">Odaberite tip resursa</option>
+            @foreach (var tip in Model.TipoviResursa)
+            {
+                <option value="@tip">@tip</option>
+            }
+        </select>
+    </div>
+
+    <div id="vozilo-filters" style="display: none;">
+        <h3>Filteri za vozilo</h3>
+        <div class="form-group">
+            <label for="TipGoriva">Tip Goriva</label>
+            <select id="TipGoriva" name="TipGoriva" class="form-control">
+                <option value="">Odaberite tip goriva</option>
+                @foreach (var tip in Enum.GetNames(typeof(rent.Models.TipGoriva)))
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="BrojSjedista">Broj Sjedista</label>
+            <input type="number" id="BrojSjedista" name="BrojSjedista" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Godiste">Godiste</label>
+            <input type="number" id="Godiste" name="Godiste" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TipVozila">Tip Vozila</label>
+            <select id="TipVozila" name="TipVozila" class="form-control">
+                <option value="">Odaberite tip vozila</option>
+                @foreach (var tip in Enum.GetNames(typeof(rent.Models.TipVozila)))
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div id="nekretnina-filters" style="display: none;">
+        <h3>Filteri za nekretninu</h3>
+        <div class="form-group">
+            <label for="Povrsina">Povrsina</label>
+            <input type="number" id="Povrsina" name="Povrsina" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="BrojSoba">Broj Soba</label>
+            <input type="number" id="BrojSoba" name="BrojSoba" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TipNekretnine">Tip Nekretnine</label>
+            <select id="TipNekretnine" name="TipNekretnine" class="form-control">
+                <option value="">Odaberite tip nekretnine</option>
+                @foreach (var tip in Enum.GetNames(typeof(rent.Models.TipNekretnine)))
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Filtriraj</button>
+</form>
+
+<hr />
+
+<h2>Rezultati</h2>
+@if (Model.Rezultati != null && Model.Rezultati.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Tip</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resurs in Model.Rezultati)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Resurs" asp-action="Details" asp-route-id="@resurs.IdResursa">
+                            @resurs.Naziv
+                        </a>
+                    </td>
+                    <td>@resurs.Opis</td>
+                    <td>@resurs.GetType().Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nema rezultata za prikaz.</p>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#TipResursa').change(function () {
+                var selectedType = $(this).val();
+                if (selectedType === 'Vozilo') {
+                    $('#vozilo-filters').show();
+                    $('#nekretnina-filters').hide();
+                } else if (selectedType === 'Nekretnina') {
+                    $('#vozilo-filters').hide();
+                    $('#nekretnina-filters').show();
+                } else {
+                    $('#vozilo-filters').hide();
+                    $('#nekretnina-filters').hide();
+                }
+            });
+        });
+    </script>
+}

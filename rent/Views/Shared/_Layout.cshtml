@@ -50,6 +50,20 @@
                                 <a class="nav-link text-light" asp-area="" asp-controller="Nekretnina" asp-action="Index">Dodaj Nekretninu</a>
                             </li>
                         }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Rezervacija"  asp-action="MyReservations">Moje Rezervacije</a>
+                            </li>
+                            
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Resurs"  asp-action="FIlter">Filtriraj</a>
+                            </li>
+                            
+                        }
 
                     </ul>
                     <partial name="_LoginPartial" />

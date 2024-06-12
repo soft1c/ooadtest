@@ -1,0 +1,160 @@
+@model rent.Models.Filtriranje
+
+@{
+    ViewData["Title"] = "Filter Resursa";
+}
+
+<h1>Filter Resursa</h1>
+
+<form asp-action="Filter" method="post">
+    <div class="form-group">
+        <label for="TipResursa">Tip Resursa</label>
+        <select id="TipResursa" name="TipResursa" asp-for="TipResursa" class="form-control" asp-items="@(new SelectList(Model.TipoviResursa))">
+            <option value="">Odaberite tip resursa</option>
+            @foreach (var tip in Model.TipoviResursa)
+            {
+                <option value="@tip">@tip</option>
+            }
+        </select>
+    </div>
+
+     <div class="form-group">
+        <label for="SortirajPo">Sortiraj po</label>
+        <select id="SortirajPo" name="SortirajPo" class="form-control" asp-for="SortirajPo" asp-items="@(new SelectList(Model.OpcijeSortiranja))">
+            <option value="">Odaberite opciju sortiranja</option>
+            @foreach (var opcija in Model.OpcijeSortiranja)
+            {
+                <option value="@opcija">@opcija</option>
+            }
+        </select>
+    </div>
+
+    <div id="vozilo-filters" style="display: none;">
+        <h3>Filteri za vozilo</h3>
+        <div class="form-group">
+            <label for="OdabraniTipoviGoriva">Tip Goriva</label>
+            <select id="OdabraniTipoviGoriva" name="OdabraniTipoviGoriva" class="form-control" multiple="multiple">
+                @foreach (var tip in Model.TipoviGoriva)
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="BrojSjedistaOd">Broj Sjedista (Od - Do)</label>
+            <div class="input-group">
+                <input type="number" id="BrojSjedistaOd" name="BrojSjedistaOd" class="form-control" />
+                <input type="number" id="BrojSjedistaDo" name="BrojSjedistaDo" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="GodisteOd">Godiste (Od - Do)</label>
+            <div class="input-group">
+                <input type="number" id="GodisteOd" name="GodisteOd" class="form-control" />
+                <input type="number" id="GodisteDo" name="GodisteDo" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="OdabraniTipoviVozila">Tip Vozila</label>
+            <select id="OdabraniTipoviVozila" name="OdabraniTipoviVozila" class="form-control" multiple="multiple">
+                @foreach (var tip in Model.TipoviVozila)
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div id="nekretnina-filters" style="display: none;">
+        <h3>Filteri za nekretninu</h3>
+        <div class="form-group">
+            <label for="PovrsinaOd">Povrsina (Od - Do)</label>
+            <div class="input-group">
+                <input type="number" id="PovrsinaOd" name="PovrsinaOd" class="form-control" />
+                <input type="number" id="PovrsinaDo" name="PovrsinaDo" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="BrojSobaOd">Broj Soba (Od - Do)</label>
+            <div class="input-group">
+                <input type="number" id="BrojSobaOd" name="BrojSobaOd" class="form-control" />
+                <input type="number" id="BrojSobaDo" name="BrojSobaDo" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="OdabraniTipoviNekretnina">Tip Nekretnine</label>
+            <select id="OdabraniTipoviNekretnina" name="OdabraniTipoviNekretnina" class="form-control" multiple="multiple">
+                @foreach (var tip in Model.TipoviNekretnina)
+                {
+                    <option value="@tip">@tip</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Filtriraj</button>
+</form>
+
+<hr />
+
+<h2>Rezultati</h2>
+@if (Model.Rezultati != null && Model.Rezultati.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Tip</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resurs in Model.Rezultati)
+            {
+                <tr>
+                    <td>
+                    @if (resurs is rent.Models.Vozilo)
+                        {
+                            <a asp-controller="Vozilo" asp-action="Details" asp-route-id="@resurs.IdResursa">
+                                @resurs.Naziv
+                            </a>
+                        }
+                        else if (resurs is rent.Models.Nekretnina)
+                        {
+                            <a asp-controller="Nekretnina" asp-action="Details" asp-route-id="@resurs.IdResursa">
+                                @resurs.Naziv
+                            </a>
+                        }
+                        </td>
+                    <td>@resurs.Opis</td>
+                    <td>@resurs.GetType().Name</td>
+                    <td>@resurs.Cijena KM</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nema rezultata za prikaz.</p>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#TipResursa').change(function () {
+                var selectedType = $(this).val();
+                if (selectedType === 'Vozilo') {
+                    $('#vozilo-filters').show();
+                    $('#nekretnina-filters').hide();
+                } else if (selectedType === 'Nekretnina') {
+                    $('#vozilo-filters').hide();
+                    $('#nekretnina-filters').show();
+                } else {
+                    $('#vozilo-filters').hide();
+                    $('#nekretnina-filters').hide();
+                }
+            });
+        });
+    </script>
+}

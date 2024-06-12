@@ -25,7 +25,23 @@ namespace rent.Controllers
         // GET: Nekretnina
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Nekretnina.ToListAsync());
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized();
+            }
+
+           
+
+            long userIdHash = HashHelper.GetLongHash(currentUserId);
+
+
+            var nekretnine = await _context.Nekretnina
+                .Where(v => v.IdVlasnika == userIdHash)
+                .ToListAsync();
+
+            return View(nekretnine);
+            
         }
 
         // GET: Nekretnina/Details/5
@@ -84,7 +100,7 @@ namespace rent.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath, IdResursa,IdVlasnika,Naziv,Opis,Ocjena")] Nekretnina nekretnina)
+        public async Task<IActionResult> Create([Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath, IdResursa,IdVlasnika,Naziv,Opis,Ocjena,Cijena")] Nekretnina nekretnina)
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +132,7 @@ namespace rent.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath,IdResursa,IdVlasnika,Naziv,Opis,Ocjena")] Nekretnina nekretnina)
+        public async Task<IActionResult> Edit(long id, [Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath,IdResursa,IdVlasnika,Naziv,Opis,Ocjena,Cijena")] Nekretnina nekretnina)
         {
             if (id != nekretnina.IdResursa)
             {
