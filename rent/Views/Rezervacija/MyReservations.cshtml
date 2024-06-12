@@ -58,13 +58,15 @@
                 <td>@item.Pocetak.ToShortDateString()</td>
                 <td>@item.Kraj.ToShortDateString()</td>
                 <td>@item.Status</td>
-                <td>
-                    <form asp-action="UpdateReservationStatus" method="post">
-                        <input type="hidden" name="id" value="@item.IdRezervacije" />
-                        <button type="submit" name="accept" value="true" class="btn btn-success">Prihvati</button>
-                        <button type="submit" name="accept" value="false" class="btn btn-danger">Odbij</button>
-                    </form>
-                </td>
+                @if(item.Status == Status.UObradi)
+                    {
+                        <form asp-action="UpdateReservationStatus" method="post">
+                            <input type="hidden" name="id" value="@item.IdRezervacije" />
+                            <button type="submit" name="accept" value="true" class="btn btn-success">Prihvati</button>
+                            <button type="submit" name="accept" value="false" class="btn btn-danger">Odbij</button>
+                        </form>
+                    }
+                
             </tr>
         }
     </tbody>

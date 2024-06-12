@@ -168,7 +168,7 @@ namespace rent.Controllers
 
             var rezervacijeOdMene = await _context.Rezervacija
                 .Include(r => r.Resurs)
-                .Where(r => _context.Vozilo.Any(v => v.IdResursa == r.IdResursa && v.IdVlasnika == userIdHash) && r.Status == Status.UObradi)
+                .Where(r => _context.Vozilo.Any(v => v.IdResursa == r.IdResursa && v.IdVlasnika == userIdHash))
                 .ToListAsync();
 
             var model = new ReservationsViewModel
