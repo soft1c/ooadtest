@@ -1,0 +1,89 @@
+@model rent.Models.AdminViewModel
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<h1>Admin Panel</h1>
+
+<h2>Resources</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Resources)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.Opis</td>
+                <td>
+                    <form asp-action="DeleteResource" method="post">
+                        <input type="hidden" name="id" value="@item.IdResursa" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Reviews</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ocjena</th>
+            <th>Komentar</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reviews)
+        {
+            <tr>
+                <td>@item.Ocjena</td>
+                <td>@item.Komentar</td>
+                <td>
+                    <form asp-action="DeleteReview" method="post">
+                        <input type="hidden" name="id" value="@item.IdRecenzije" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Reservations</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Resurs</th>
+            <th>Početak</th>
+            <th>Kraj</th>
+            <th>Status</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservations)
+        {
+            <tr>
+                <td>@item.IdResursa</td>
+                <td>@item.Pocetak</td>
+                <td>@item.Kraj</td>
+                <td>@item.Status</td>
+                <td>
+                    <form asp-action="CancelReservation" method="post">
+                        <input type="hidden" name="id" value="@item.IdRezervacije" />
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
