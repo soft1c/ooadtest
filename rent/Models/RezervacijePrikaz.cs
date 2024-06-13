@@ -1,4 +1,6 @@
-namespace rent.Models
+using System.Collections.Generic;
+
+namespace rent.Models.ViewModels
 {
     public class ReservationsViewModel
     {

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using rent.Data;
 using rent.Models;
+using rent.Models.ViewModels;
 
 namespace rent.Controllers
 {
@@ -44,25 +45,62 @@ namespace rent.Controllers
         }
 
         // GET: Recenzija/Create
-        public IActionResult Create()
+        public IActionResult Create(long id)
         {
-            return View();
+            var viewModel = new CreateRecenzijaViewModel
+            {
+                IdResursa = id
+            };
+            return View(viewModel);
         }
 
         // POST: Recenzija/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdRecenzije,IdAutora,IdResursa,Ocjena,Komentar")] Recenzija recenzija)
+        public async Task<IActionResult> Create([Bind("IdResursa,Ocjena,Komentar")] CreateRecenzijaViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(currentUserId))
+                {
+                    return Unauthorized();
+                }
+
+                var recenzija = new Recenzija
+                {
+                    IdAutora = HashHelper.GetLongHash(currentUserId),
+                    IdResursa = viewModel.IdResursa,
+                    Ocjena = viewModel.Ocjena,
+                    Komentar = viewModel.Komentar
+                };
+
                 _context.Add(recenzija);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                // Update average rating for the resource
+                await UpdateResursOcjena(recenzija.IdResursa);
+
+                return RedirectToAction("MyReservations", "Rezervacija");
             }
-            return View(recenzija);
+
+            return View(viewModel);
+        }
+
+        private async Task UpdateResursOcjena(long resursId)
+        {
+            var resurs = await _context.Resurs.FindAsync(resursId);
+            if (resurs != null)
+            {
+                var recenzije = await _context.Recenzija
+                    .Where(r => r.IdResursa == resursId)
+                    .ToListAsync();
+
+                resurs.Ocjena = recenzije.Average(r => r.Ocjena);
+
+                _context.Resurs.Update(resurs);
+                await _context.SaveChangesAsync();
+            }
         }
 
         // GET: Recenzija/Edit/5
@@ -82,8 +120,6 @@ namespace rent.Controllers
         }
 
         // POST: Recenzija/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("IdRecenzije,IdAutora,IdResursa,Ocjena,Komentar")] Recenzija recenzija)

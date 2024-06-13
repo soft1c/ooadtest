@@ -1,47 +1,32 @@
-﻿@model rent.Models.Recenzija
+﻿@model rent.Models.ViewModels.CreateRecenzijaViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Ostavi recenziju";
 }
 
-<h1>Create</h1>
+<h1>Ostavi recenziju</h1>
 
-<h4>Recenzija</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdAutora" class="control-label"></label>
-                <input asp-for="IdAutora" class="form-control" />
-                <span asp-validation-for="IdAutora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdResursa" class="control-label"></label>
-                <input asp-for="IdResursa" class="form-control" />
-                <span asp-validation-for="IdResursa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ocjena" class="control-label"></label>
-                <input asp-for="Ocjena" class="form-control" />
-                <span asp-validation-for="Ocjena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Komentar" class="control-label"></label>
-                <input asp-for="Komentar" class="form-control" />
-                <span asp-validation-for="Komentar" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Ocjena" class="control-label"></label>
+        <select asp-for="Ocjena" class="form-control">
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+        <span asp-validation-for="Ocjena" class="text-danger"></span>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="form-group">
+        <label asp-for="Komentar" class="control-label"></label>
+        <textarea asp-for="Komentar" class="form-control"></textarea>
+        <span asp-validation-for="Komentar" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="IdResursa" />
+    <div class="form-group">
+        <input type="submit" value="Ostavi recenziju" class="btn btn-primary" />
+    </div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

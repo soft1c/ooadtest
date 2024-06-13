@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using rent.Data;
 using rent.Models;
 using System.Security.Claims;
+using rent.Models.ViewModels;
 
 namespace rent.Controllers
 {
@@ -152,33 +153,34 @@ namespace rent.Controllers
 
         // GET: Rezervacija/MyReservations
         public async Task<IActionResult> MyReservations()
-        {
-            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(currentUserId))
-            {
-                return Unauthorized();
-            }
+{
+    var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (string.IsNullOrEmpty(currentUserId))
+    {
+        return Unauthorized();
+    }
 
-            long  userIdHash = HashHelper.GetLongHash(currentUserId);
+    long userIdHash = HashHelper.GetLongHash(currentUserId);
 
-            var mojeRezervacije = await _context.Rezervacija
-                .Include(r => r.Resurs)
-                .Where(r => r.IdOsobe == userIdHash)
-                .ToListAsync();
+    var mojeRezervacije = await _context.Rezervacija
+        .Include(r => r.Resurs)
+        .Where(r => r.IdOsobe == userIdHash)
+        .ToListAsync();
 
-            var rezervacijeOdMene = await _context.Rezervacija
-                .Include(r => r.Resurs)
-                .Where(r => _context.Vozilo.Any(v => v.IdResursa == r.IdResursa && v.IdVlasnika == userIdHash))
-                .ToListAsync();
+    var rezervacijeOdMene = await _context.Rezervacija
+        .Include(r => r.Resurs)
+        .Where(r => _context.Resurs.Any(v => v.IdResursa == r.IdResursa && v.IdVlasnika == userIdHash) && r.Status == Status.UObradi)
+        .ToListAsync();
 
-            var model = new ReservationsViewModel
-            {
-                MojeRezervacije = mojeRezervacije,
-                RezervacijeOdMene = rezervacijeOdMene
-            };
+    var model = new ReservationsViewModel
+    {
+        MojeRezervacije = mojeRezervacije,
+        RezervacijeOdMene = rezervacijeOdMene
+    };
 
-            return View(model);
-        }
+    return View(model);
+}
+
 
         [HttpPost]
         public async Task<IActionResult> UpdateReservationStatus(long id, bool accept)
