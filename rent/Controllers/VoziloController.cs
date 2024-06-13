@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using rent.Data;
 using rent.Models;
+using rent.Models.ViewModels;
 
 namespace rent.Controllers
 {
@@ -29,14 +30,7 @@ namespace rent.Controllers
                 return Unauthorized();
             }
 
-            Console.WriteLine($"Original UserId: {currentUserId}");
-            TempData["OriginalUserId"] = currentUserId;
-
             long userIdHash = HashHelper.GetLongHash(currentUserId);
-
-            // Loguj i prikaži heširani UserId
-            Console.WriteLine($"Heširani UserId: {userIdHash}");
-            TempData["UserIdHash"] = userIdHash.ToString();
 
             var vozila = await _context.Vozilo
                 .Where(v => v.IdVlasnika == userIdHash)
@@ -45,23 +39,33 @@ namespace rent.Controllers
             return View(vozila);
         }
 
-        // GET: Vozilo/Details/5
         public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+{
+    if (id == null)
+    {
+        return NotFound();
+    }
 
-            var vozilo = await _context.Vozilo
-                .FirstOrDefaultAsync(m => m.IdResursa == id);
-            if (vozilo == null)
-            {
-                return NotFound();
-            }
+    var vozilo = await _context.Vozilo
+        .FirstOrDefaultAsync(m => m.IdResursa == id);
+    if (vozilo == null)
+    {
+        return NotFound();
+    }
 
-            return View(vozilo);
-        }
+    // Fetch the reviews for this vehicle
+    var recenzije = await _context.Recenzija
+        .Where(r => r.IdResursa == id)
+        .ToListAsync();
+
+    var viewModel = new VoziloDetailsViewModel
+    {
+        Vozilo = vozilo,
+        Recenzije = recenzije
+    };
+
+    return View(viewModel);
+}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -72,12 +76,13 @@ namespace rent.Controllers
             {
                 return Unauthorized();
             }
+
             if (Pocetak > Kraj)
             {
                 TempData["ErrorMessage"] = "Pocetak rezervacije mora biti prije kraja rezervacije!";
-                return RedirectToAction("Details", "Vozilo", new { id = id });
+                return RedirectToAction("Details", "Vozilo", new { id });
             }
-           
+
             long userIdHash = HashHelper.GetLongHash(currentUserId);
 
             var rezervacija = new Rezervacija
@@ -105,7 +110,7 @@ namespace rent.Controllers
         // POST: Vozilo/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,Ocjena,Cijena,ImagePath")] Vozilo vozilo)
+        public async Task<IActionResult> Create([Bind("Tip,Marka,Model,Godiste,BrojSjedista,TipGoriva,Naziv,Opis,ImagePath,Cijena")] Vozilo vozilo)
         {
             if (ModelState.IsValid)
             {
@@ -114,16 +119,9 @@ namespace rent.Controllers
                 {
                     return Unauthorized();
                 }
-
-                Console.WriteLine($"Original UserId pri kreiranju: {currentUserId}");
-                TempData["OriginalUserId"] = currentUserId;
+                vozilo.Ocjena = 0;
 
                 vozilo.IdVlasnika = HashHelper.GetLongHash(currentUserId);
-
-                // Loguj i prikaži heširani UserId
-                Console.WriteLine($"Heširani UserId: {vozilo.IdVlasnika}");
-                TempData["UserIdHash"] = vozilo.IdVlasnika.ToString();
-
 
                 _context.Add(vozilo);
                 await _context.SaveChangesAsync();
@@ -219,4 +217,6 @@ namespace rent.Controllers
             return _context.Vozilo.Any(e => e.IdResursa == id);
         }
     }
+
+    
 }

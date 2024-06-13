@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace rent.Models
 {
@@ -13,6 +14,8 @@ namespace rent.Models
 
         [Display(Name ="Slika")]
         public string ImagePath { get; set; } // Dodano svojstvo za putanju slike
+
+       
         
     }
 

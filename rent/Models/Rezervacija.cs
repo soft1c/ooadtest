@@ -16,6 +16,7 @@ namespace rent.Models
         [EnumDataType(typeof(Status))]  public Status Status { get; set; }
 
          public virtual Resurs Resurs { get; set; }
+        
     }
 
     public enum Status

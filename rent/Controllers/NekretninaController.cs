@@ -100,8 +100,17 @@ namespace rent.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath, IdResursa,IdVlasnika,Naziv,Opis,Ocjena,Cijena")] Nekretnina nekretnina)
+        public async Task<IActionResult> Create([Bind("Tip,Povrsina,BrojSoba,Parking,ImagePath, IdResursa,Naziv,Opis,Cijena")] Nekretnina nekretnina)
         {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(currentUserId))
+                {
+                    return Unauthorized();
+                }
+
+            nekretnina.IdVlasnika = HashHelper.GetLongHash(currentUserId);
+            nekretnina.Ocjena = 0;
             if (ModelState.IsValid)
             {
                 _context.Add(nekretnina);
